@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mindora AI Academy | Classroom</title>
+
+<style>
+:root {
+  --navy: #101e38;
+  --blue: #1769aa;
+  --cyan: #26b8ce;
+  --gold: #c6a45a;
+  --background: #f4f6fa;
+  --white: #ffffff;
+  --muted: #68758a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--background);
+  color: var(--navy);
+}
+header {
+  background: var(--navy);
+  color: white;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.brand { font-size: 20px; font-weight: bold; }
+.brand span { color: var(--gold); }
+header small { color: #c8d4e4; }
+.container {
+  max-width: 1250px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 3px 15px rgba(16,30,56,.06);
+  margin-bottom: 20px;
+}
+h1 { font-size: 27px; margin: 8px 0; }
+h2 { font-size: 19px; margin-top: 0; }
+h3 { font-size: 16px; }
+.muted { color: var(--muted); font-size: 14px; }
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #e6f6ee;
+  color: #147344;
+  font-size: 12px;
+  font-weight: bold;
+}
+.classroom {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, .9fr);
+  gap: 20px;
+}
+.instructor {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.avatar {
+  width: 105px;
+  height: 105px;
+  border-radius: 14px;
+  background: #e8edf5;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  flex-shrink: 0;
+}
+button, select {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.primary { background: var(--blue); color: white; }
+.secondary { background: #edf2f8; color: var(--navy); }
+select { background: #edf2f8; color: var(--navy); }
+.player {
+  background: var(--navy);
+  color: white;
+  border-radius: 13px;
+  padding: 20px;
+  margin-top: 18px;
+}
+.player button { background: white; color: var(--navy); }
+.progress {
+  width: 100%;
+  height: 7px;
+  background: #51617b;
+  border-radius: 10px;
+  margin: 18px 0 8px;
+  overflow: hidden;
+}
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--cyan);
+}
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.notes {
+  line-height: 1.8;
+  font-size: 15px;
+}
+.notes .current {
+  background: #edf7fc;
+  border-left: 4px solid var(--cyan);
+  padding: 12px;
+  border-radius: 5px;
+}
+.question-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+textarea {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #d8dfeb;
+  border-radius: 9px;
+  padding: 12px;
+  font-family: inherit;
+  resize: vertical;
+}
+#answer {
+  background: #edf7fc;
+  padding: 12px;
+  border-radius: 9px;
+  display: none;
+  line-height: 1.6;
+}
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.quiz-option {
+  display: block;
+  background: #f2f5fa;
+  margin: 9px 0;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 30px;
+  font-size: 13px;
+}
+@media(max-width: 800px) {
+  .classroom { grid-template-columns: 1fr; }
+}
+@media(max-width: 480px) {
+  .instructor { align-items: flex-start; }
+  .avatar { width: 75px; height: 75px; }
+  h1 { font-size: 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">MINDORA <span>AI</span> ACADEMY</div>
+  <small>Student Classroom</small>
+</header>
+
+<main class="container">
+
+  <div class="topline">
+    <div>
+      <div class="muted">Introduction to Artificial Intelligence</div>
+      <h1>Understanding Artificial Intelligence</h1>
+      <div class="muted">Unit 1 · Lesson 1 of 20</div>
+    </div>
+    <span class="badge">AI FOUNDATION COURSE</span>
+  </div>
+
+  <div class="classroom">
+
+    <section>
+
+      <div class="card">
+        <div class="instructor">
+          <div class="avatar">🤖</div>
+          <div>
+            <span class="badge">AI Virtual Presenter</span>
+            <h2 style="margin:8px 0">Mindora AI Instructor</h2>
+            <div class="muted">Specialisation: Artificial Intelligence</div>
+            <div class="muted">Virtual teaching personality</div>
+          </div>
+        </div>
+
+        <div class="player">
+          <strong>Lesson audio</strong>
+          <p id="audioStatus" class="muted">
+            Audio demonstration – no recording connected yet
+          </p>
+          <div class="progress">
+            <div class="progress-fill" id="audioProgress"></div>
+          </div>
+          <div class="player-controls">
+            <span id="audioTime">00:00 / 00:00</span>
+            <button onclick="playDemo()">▶ Play demo</button>
+          </div>
+          <p class="muted">English and Kiswahili narration will be connected here.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="topline">
+          <h2>Your lesson notes</h2>
+          <select id="language" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="sw">Kiswahili</option>
+          </select>
+        </div>
+
+        <div class="notes" id="lessonNotes">
+          <div class="current">
+            <h3>What is Artificial Intelligence?</h3>
+            Artificial Intelligence (AI) is the ability of computer systems to perform tasks that normally require human intelligence.
+          </div>
+
+          <h3>Examples of AI capabilities</h3>
+          <ul>
+            <li>Learning from data.</li>
+            <li>Recognising patterns.</li>
+            <li>Understanding human language.</li>
+            <li>Solving problems.</li>
+          </ul>
+
+          <h3>How does AI work?</h3>
+          AI systems process information and use algorithms and models to produce outputs based on data and instructions.
+
+          <h3>AI and traditional programming</h3>
+          Traditional programming generally follows explicitly written instructions. Some AI approaches learn patterns from data during training.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Lesson navigation</h2>
+        <div class="lesson-nav">
+          <button class="secondary" disabled>← Previous lesson</button>
+          <button class="primary" onclick="alert('Next lesson navigation will be connected when the course lessons are added.')">
+            Next lesson →
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <aside>
+
+      <div class="card">
+        <h2>Ask your AI instructor</h2>
+        <p class="muted">
+          Ask questions about the lesson while you study. The live AI connection will be added later.
+        </p>
+
+        <div class="question-box">
+          <textarea id="studentQuestion" placeholder="Type your question here..."></textarea>
+          <button class="primary" onclick="askDemo()">Ask instructor</button>
+          <div id="answer"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Practice quiz</h2>
+        <p>What best describes Artificial Intelligence?</p>
+
+        <label class="quiz-option">
+          <input type="radio" name="quiz" value="A">
+          A. A computer screen
+        </label>
+
+        <label class="quiz-option">
+          <input type="radio" name="quiz" value="B">
+          B. Computer systems performing tasks that normally require human intelligence
+        </label>
+
+        <label class="quiz-option">
+          <input type="radio" name="quiz" value="C">
+          C. A type of internet connection
+        </label>
+
+        <button class="primary" onclick="checkQuiz()">Check answer</button>
+        <p id="quizResult"></p>
+        <p class="muted">Practice only. Your quiz score will not prevent you from continuing to the next lesson.</p>
+      </div>
+
+      <div class="card">
+        <h2>Your course progress</h2>
+        <strong>1 of 20 lessons</strong>
+        <div class="progress">
+          <div class="progress-fill" style="width:5%"></div>
+        </div>
+        <p class="muted">Your progress will be saved to your student account once connected.</p>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  © 2026 Mindora AI Academy · African talent. Global AI impact.
+  <br>AI-generated educational environment.
+</footer>
+
+<script>
+let demoTimer;
+let demoSeconds = 0;
+
+function playDemo() {
+  clearInterval(demoTimer);
+  demoSeconds = 0;
+
+  document.getElementById("audioStatus").textContent =
+    "Interface demonstration running – no actual narration.";
+
+  demoTimer = setInterval(() => {
+    demoSeconds++;
+    document.getElementById("audioTime").textContent =
+      "00:" + String(demoSeconds).padStart(2, "0") + " / 00:30";
+
+    document.getElementById("audioProgress").style.width =
+      Math.min(demoSeconds / 30 * 100, 100) + "%";
+
+    if (demoSeconds >= 30) {
+      clearInterval(demoTimer);
+      document.getElementById("audioStatus").textContent =
+        "Demonstration complete.";
+    }
+  }, 1000);
+}
+
+function askDemo() {
+  const question = document.getElementById("studentQuestion").value.trim();
+  const answer = document.getElementById("answer");
+
+  if (!question) {
+    alert("Please type a question first.");
+    return;
+  }
+
+  answer.style.display = "block";
+  answer.textContent =
+    "Thank you for your question. The AI instructor connection is not yet active. It will be connected to the approved course materials in a later development stage.";
+}
+
+function checkQuiz() {
+  const selected = document.querySelector('input[name="quiz"]:checked');
+  const result = document.getElementById("quizResult");
+
+  if (!selected) {
+    result.textContent = "Please select an answer.";
+    return;
+  }
+
+  if (selected.value === "B") {
+    result.textContent = "Correct! AI enables computer systems to perform tasks normally requiring human intelligence.";
+    result.style.color = "green";
+  } else {
+    result.textContent = "Not quite. Review the lesson notes and try again.";
+    result.style.color = "red";
+  }
+}
+
+function changeLanguage() {
+  const language = document.getElementById("language").value;
+  const notes = document.getElementById("lessonNotes");
+
+  if (language === "sw") {
+    notes.innerHTML = `
+      <div class="current">
+        <h3>Akili Bandia ni nini?</h3>
+        Akili Bandia (AI) ni uwezo wa mifumo ya kompyuta kutekeleza kazi ambazo kwa kawaida zinahitaji akili ya binadamu.
+      </div>
+      <h3>Mifano ya uwezo wa AI</h3>
+      <ul>
+        <li>Kujifunza kutokana na data.</li>
+        <li>Kutambua mifumo.</li>
+        <li>Kuelewa lugha ya binadamu.</li>
+        <li>Kutatua matatizo.</li>
+      </ul>
+      <h3>AI hufanyaje kazi?</h3>
+      Mifumo ya AI huchakata taarifa na kutumia algoriti na modeli kutoa matokeo kulingana na data na maelekezo.
+      <h3>AI na upangaji programu wa kawaida</h3>
+      Upangaji programu wa kawaida kwa ujumla hufuata maelekezo yaliyoandikwa waziwazi. Baadhi ya mbinu za AI hujifunza mifumo kutokana na data wakati wa mafunzo.
+    `;
+  } else {
+    notes.innerHTML = `
+      <div class="current">
+        <h3>What is Artificial Intelligence?</h3>
+        Artificial Intelligence (AI) is the ability of computer systems to perform tasks that normally require human intelligence.
+      </div>
+      <h3>Examples of AI capabilities</h3>
+      <ul>
+        <li>Learning from data.</li>
+        <li>Recognising patterns.</li>
+        <li>Understanding human language.</li>
+        <li>Solving problems.</li>
+      </ul>
+      <h3>How does AI work?</h3>
+      AI systems process information and use algorithms and models to produce outputs based on data and instructions.
+      <h3>AI and traditional programming</h3>
+      Traditional programming generally follows explicitly written instructions. Some AI approaches learn patterns from data during training.
+    `;
+  }
+}
+</script>
+
+</body>
+</html>
